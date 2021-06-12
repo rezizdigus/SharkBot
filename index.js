@@ -37,26 +37,31 @@ class ATOMiX extends Discord.Client {
 		this.EventLoader = new EventLoader(this);
 		this.conLog = clog;
 		this.log = Log;
-		//this.db = new Database(this);
+		this.Sentry = Sentry;
 		this.apiRequest = apiRequest;
 		this.login(this.config.token);
 		this.inVerification = new Map();
 		this.DebugEnabled = debugEnabled;
 		this.debug = false;
-		if (this.DebugEnabled) {this.debug = debug; new Log('Debug mode is enabled', 'important');}
+		if (this.DebugEnabled) {this.debug = debug; new Log('Debug mode is enabled', 'warning');}
 
 		this.commands = new Map();
 		this.cmdAliases = new Map();
 	}
 }
 
-new Log(`Welcome! ${info.botName} is loading. Please standby.", "info`);
+new Log(`Welcome! ${info.botName} is loading. Please standby.`, "info");
 require('./validate.js');
 const client = new ATOMiX();
 
 if (!(client.config.devMode === true)) {
 	try {
-		Sentry.init({ dsn: client.config.SentryInfo.dsn });
+		Sentry.init({ 
+			dsn: client.config.SentryInfo.dsn, 
+			integrations: [
+				new Sentry.Integrations.Http({ tracing: true }),
+			], 
+			tracesSampleRate: client.config.SentryInfo.tracesSampleRate });
 	} catch (e) {
 		new client.log('Error initializing Sentry.', "error")
 	}
@@ -64,13 +69,11 @@ if (!(client.config.devMode === true)) {
 	new client.log("Running in development mode. Sentry Disabled", "warning");
 }
 
-client.CommandLoader.LoadCommands();
+let Transaction;
 
-client.EventLoader.LoadEvents();
-
-/*const cmdLoaderTransaction = Sentry.startTransaction({
+Transaction = Sentry.startTransaction({
 	op: "cmdload",
-	name: "Command Loader",
+	name: "Start Command Loader",
 });
 
 try {
@@ -78,12 +81,12 @@ try {
 } catch (e) {
     Sentry.captureException(e);
 } finally {
-    cmdLoaderTransaction.finish();
+    Transaction.finish();
 }
 
-const evtLoaderTransaction = Sentry.startTransaction({
-	op: "evtload",
-	name: "Event Loader",
+Transaction = Sentry.startTransaction({
+	op: "cmdload",
+	name: "Start Event Loader",
 });
 
 try {
@@ -91,8 +94,8 @@ try {
 } catch (e) {
     Sentry.captureException(e);
 } finally {
-    evtLoaderTransaction.finish();
-} */
+    Transaction.finish();
+}
 
 process.on('SIGINT', () => {
 	if (client.DebugEnabled) fs.unlinkSync(__dirname + '\\debug.json');
