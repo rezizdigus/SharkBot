@@ -1,0 +1,37 @@
+{
+	"currentVersion": "v0.7b",
+	"about": "Hewwo, I'm SharkBot.\nMy PFP: https://www.furaffinity.net/view/36777809/",
+	"cmdFooter": "(c) SharkBot by Rez",
+	"botName": "SharkBot",
+	"sharkPictureLinks": [
+		"https://www.furaffinity.net/view/40087471/",
+		"https://www.furaffinity.net/view/38440529/",
+		"https://www.furaffinity.net/view/31773468/",
+		"https://www.furaffinity.net/view/13484822/",
+		"https://www.furaffinity.net/view/29496646/",
+		"https://www.furaffinity.net/view/40053538/",
+		"https://www.furaffinity.net/view/27085826/",
+		"https://www.furaffinity.net/view/31345645/",
+		"https://www.furaffinity.net/view/28397259/",
+		"https://www.furaffinity.net/view/31228970/",
+		"https://www.furaffinity.net/view/3544103/",
+		"https://www.furaffinity.net/view/28507077/",
+		"https://www.furaffinity.net/view/28507064/",
+		"https://www.furaffinity.net/view/28506336/",
+		"https://www.furaffinity.net/view/28506302/",
+		"https://www.furaffinity.net/view/34288542/",
+		"https://www.furaffinity.net/view/34259029/",
+		"https://www.furaffinity.net/view/31444188/",
+		"https://www.furaffinity.net/view/40162044/"
+	],
+	"customStatuses": [
+		{
+			"status": "for ;help",
+			"type": "WATCHING"
+		},
+		{
+			"status": "for sharks!",
+			"type": "WATCHING"
+		}
+	]
+}

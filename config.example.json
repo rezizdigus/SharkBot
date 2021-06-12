@@ -1,0 +1,6 @@
+{
+	"token": "botToken",
+	"prefix": ";",
+	"debug": true,
+	"devMode": false
+}
