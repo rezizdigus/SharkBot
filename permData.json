@@ -1,0 +1,41 @@
+{
+	"roles": [
+		{
+			"Name": "Moderator",
+			"ID": "0",
+			"Permissions": ["MODERATOR"]
+		},
+		{
+			"Name": "Admin",
+			"ID": "1",
+			"Permissions": ["SAY", "MODERATOR"]
+		},
+		{
+			"Name": "Creator",
+			"ID": "2",
+			"Permissions": ["ALL"]
+		}
+	],
+	"userData": [
+		{
+			"userId": "280737456054206464",
+			"role": "2"
+		},
+		{
+			"userId": "535577849000624128",
+			"role": "1"
+		},
+		{
+			"userId": "420965737067446272",
+			"role": "1"
+		},
+		{
+			"userId": "479888025703284757",
+			"role": "1"
+		},
+		{
+			"userId": "825137167789064192",
+			"role": "1"
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"currentVersion": "v0.7b",
+	"about": "Hewwo, I'm SharkBot.\nMy PFP: https://www.furaffinity.net/view/36777809/ \nFound bugs or want to suggest a feature?\n Use this: https://github.com/rezizdigus/SharkBot/issues",
+	"cmdFooter": "(c) SharkBot by Rez",
+	"botName": "SharkBot",
+	"customStatuses": [
+		{
+			"status": "for {prefix}help",
+			"type": "WATCHING"
+		},
+		{
+			"status": "for shorks!",
+			"type": "WATCHING"
+		},
+		{
+			"status": "{prefix}{command}",
+			"type": "PLAYING"
+		}
+	]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "sharkbot",
+  "version": "0.0.0",
+  "description": "SharkBot",
+  "main": "index.js",
+  "scripts": {
+    "run": "node .",
+    "debug": "nodemon ."
+  },
+  "author": "Rez",
+  "license": "MIT",
+  "dependencies": {
+    "@sentry/node": "^6.6.0",
+    "@sentry/tracing": "^6.6.0",
+    "chalk": "^4.1.0",
+    "discord.js": "^12.5.1",
+    "fs": "0.0.1-security",
+    "fs-readdir-recursive": "^1.1.0",
+    "mariadb": "^2.5.3",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "noblox": "^4.8.4",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
+    "util": "^0.12.3"
+  }
+}
