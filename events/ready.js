@@ -5,10 +5,16 @@ module.exports = client => {
 	}
 
 	setInterval(function(){
-		let status = statuses[Math.floor(Math.random() * statuses.length)];
+		const commands = Array.from(client.commands.keys());
+		const command = commands[Math.floor(Math.random() * commands.length)];
 
-		client.user.setActivity(`${status.status} | ${client.informations.currentVersion}`, {
+		let status = statuses[Math.floor(Math.random() * statuses.length)];
+		StatusText = status.status;
+		StatusText = StatusText.replace('{prefix}', client.config.prefix);
+		StatusText = StatusText.replace('{command}', command);
+
+		client.user.setActivity(`${StatusText} | ${client.informations.currentVersion}`, {
 			type: status.type
 		});
-	}, 10000)
+	}, 5000)
 }
