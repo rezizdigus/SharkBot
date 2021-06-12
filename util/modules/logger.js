@@ -1,5 +1,3 @@
-// Looking back, I should have just used Winston... but fuck me, at least I made this logger work.
-
 const chalk = require("chalk");
 const moment = require('moment');
 const fs = require('fs');
@@ -23,7 +21,7 @@ function appendToLog(text, type = "normal") {
 	
 }
 
-module.exports = class log {
+module.exports = class Log {
 	constructor(msg, type = "info") {
 		this.msg = msg;
 		this.type = type.toLowerCase();
@@ -87,10 +85,10 @@ module.exports = class log {
 				return console.log(`${chalk.gray('['+dateParsed+' : ')}${chalk.red('IMPORTANT')}${chalk.gray(']:')} ${this.msg}`);
 			}
 			case "shutdown": {
-				new log("Shutdown procedure initialized.", "important");
+				new Log("Shutdown procedure initialized.", "important");
 
-				new log("Error logs were saved to '/logs/error/err-"+dP+".log'", "info");
-				new log("Logs were saved to '/logs/other/"+dP+".log'", "info");
+				new Log("Error logs were saved to '/logs/error/err-"+dP+".log'", "info");
+				new Log("Logs were saved to '/logs/other/"+dP+".log'", "info");
 
 				if (this.msg) {
 					appendToLog(`[${dateParsed} : SHUTDOWN]: ATOMiX is shutting down. Reason: ${this.msg}`);

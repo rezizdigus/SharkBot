@@ -1,6 +1,10 @@
 {
 	"token": "botToken",
 	"prefix": ";",
-	"debug": true,
-	"devMode": false
+	"debug": false,
+	"devMode": false,
+	"SentryInfo": {
+		"dsn": "sentry",
+		"tracesSampleRate": 0.8
+	}
 }
